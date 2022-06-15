@@ -37,11 +37,9 @@ def contact(request):
     contactMessage = contactPage.objects.all()[0]
     contactHeader = contactMessage.contactHeader
     contactParagraph = contactMessage.contactParagraph
-    contactDetails = contactDetails.objects.all()
 
     context={
         "contactHeader" : contactHeader,
-        "contactParagraph" : contactParagraph,
-        "contactDetails" : contactDetails
+        "contactParagraph" : contactParagraph
     }
     return render (request, "contact.html",context)
