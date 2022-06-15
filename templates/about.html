@@ -267,7 +267,12 @@
                 <div class="col-lg-6 col-xl-5">
                     <!-- THUMBNAILS -->
                     <div class="slider-nav-thumbnails">
+                        {% for lead in leader %}
                         <div class="slider-thumbnails">
+                            <img src="media/{{lead.leaderImg}}" alt="slideimg" class="image">
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div class="slider-thumbnails">
                             <img src="static/img/client/sachin_pandey.png" alt="slideimg" class="image">
                         </div>
                         <div class="slider-thumbnails">
@@ -278,13 +283,34 @@
                         </div>
        				    <div class="slider-thumbnails">
                             <img src="static/img/client/aditya_kumar.JPG" alt="slideimg" class="image">
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-10">
                     <!-- MAIN SLIDES -->
                     <div class="slider">
-                        <div data-index="1">
+                        {% for lead in leader %}
+                        <div data-index={{forloop.counter}}>
+                            <div class="client_review_text text-center">
+                                 <!--    <ul>
+                                        <li style="display:inline-block;">
+                                            <a href="mailto:pandey.6@iitj.ac.in">
+                                                                    <img src="img/contact.png" class="quate_icon" alt="quate">
+                                                                </a>
+                                        </li>
+                                        <li style="display:inline-block;">
+                                            <a href="https://api.whatsapp.com/send?phone=919557588318"> <img src="img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                        </li>
+                                    </ul> -->
+                                <h3>{{lead.leaderName}}</h3>
+                                <h5>{{lead.leaderPosition}}</h5>
+                                <p align="center">
+                                	{{lead.leaderDesc}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div data-index="1">
                             <div class="client_review_text text-center">
                                  <!--    <ul>
                                         <li style="display:inline-block;">
@@ -366,7 +392,7 @@ It is more than just news....It is a book of our lives here at IITJ...
                               	"iitj newsletter club pheme, helping you connect to the campus, feel free to contact us for anything required"
                                 </p>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>

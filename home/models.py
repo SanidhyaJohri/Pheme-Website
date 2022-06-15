@@ -18,6 +18,12 @@ class BlogCard(models.Model):
     blogHeading = models.CharField(max_length=100)
 
 
+class Leader(models.Model):
+    leaderImg=models.ImageField(upload_to = "pics", blank = True)
+    leaderName=models.CharField(max_length=100)
+    leaderPosition=models.CharField(max_length=100)
+    leaderDesc=models.CharField(max_length=1000)
+
 class contactPage(models.Model):
     contactHeader = models.CharField(max_length=100)
     contactParagraph = models.CharField(max_length=100)

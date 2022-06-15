@@ -25,10 +25,12 @@ def about(request):
     aboutUs=about.aboutUs
     aboutDescription=about.aboutDescription
 
+    leader=Leader.objects.all()
     context={
         "aboutName": aboutName,
         "aboutUs": aboutUs,
-        "aboutDescription":aboutDescription
+        "aboutDescription":aboutDescription,
+        "leader":leader
     }
     return render (request, "about.html",context)
 
@@ -37,9 +39,10 @@ def contact(request):
     contactMessage = contactPage.objects.all()[0]
     contactHeader = contactMessage.contactHeader
     contactParagraph = contactMessage.contactParagraph
-
+    contactdetails=contactDetails.objects.all()
     context={
         "contactHeader" : contactHeader,
-        "contactParagraph" : contactParagraph
+        "contactParagraph" : contactParagraph,
+        "contactdetails":contactdetails
     }
     return render (request, "contact.html",context)

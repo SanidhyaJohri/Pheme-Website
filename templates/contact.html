@@ -161,8 +161,12 @@
                 <div class="col-lg-6 col-xl-5">
                     <!-- THUMBNAILS -->
                     <div class="slider-nav-thumbnails">
-
+                        {% for cont in contactdetails  %}
                         <div class="slider-thumbnails">
+                            <img src="media/{{cont.contactImg}}" alt="slideimg" class="image">
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div class="slider-thumbnails">
                             <img src="static/img/client/sachin_pandey.png" alt="slideimg" class="image">
                         </div>
                         <div class="slider-thumbnails">
@@ -173,13 +177,38 @@
                         </div>
        				    <div class="slider-thumbnails">
                             <img src="static/img/client/aditya_kumar.JPG" alt="slideimg" class="image">
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-10">
                     <!-- MAIN SLIDES -->
                     <div class="slider">
-                        <div data-index="1">
+                        {% for cont in contactdetails  %}
+                        <div data-index={{forloop.counter}}>
+                            <div class="client_review_text text-center">
+                                    <ul>
+                                        <li style="display:inline-block;">
+                                            <a href="mailto:{{cont.contactEmail}}">
+                                                                    <img src="static/img/contact.png" class="quate_icon" alt="quate">
+                                                                </a>
+                                        </li>
+                                        <li style="display:inline-block;">
+                                            <a href="{{cont.contactPhone}}"> <img src="static/img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                        </li>
+                                    </ul>
+                                <h3>{{cont.contactName}}</h3>
+                                <h5>{{cont.contactPosition}}</h5>
+                                <p align="center">
+                                	{{cont.contactPhone}}
+                                </br>
+                                	 <a href="mailto:{{cont.contactEmail}}">
+                                        {{cont.contactEmail}}
+                                	 </a>
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div data-index="1">
                             <div class="client_review_text text-center">
                                     <ul>
                                         <li style="display:inline-block;">
@@ -272,7 +301,7 @@
                                 	 </a>
                                 </p>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>
