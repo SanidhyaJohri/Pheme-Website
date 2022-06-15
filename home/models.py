@@ -17,3 +17,15 @@ class BlogCard(models.Model):
     blogHref = models.CharField(max_length=100)
     blogHeading = models.CharField(max_length=100)
 
+
+class contactPage(models.Model):
+    contactHeader = models.CharField(max_length=100)
+    contactParagraph = models.CharField(max_length=100)
+
+class contactDetails(models.Model):
+    contactName = models.CharField(max_length=100)
+    contactImg = models.ImageField(upload_to = "contact", blank = True)
+    contactPosition = models.CharField(max_length=100)
+    contactPhone = models.CharField(max_length=100)
+    contactEmail = models.CharField(max_length=100)
+

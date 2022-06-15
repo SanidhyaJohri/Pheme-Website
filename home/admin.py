@@ -4,3 +4,5 @@ from home.models import *
 admin.site.register(WelcomeMessage)
 admin.site.register(AboutContent)
 admin.site.register(BlogCard)
+admin.site.register(contactPage)
+admin.site.register(contactDetails)
