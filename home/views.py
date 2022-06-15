@@ -12,8 +12,18 @@ def index(request):
         "welcomeHeader": welcomeHeader,
         "welcomeParagraph": welcomeParagraph,
     }
-    
+
     return render (request, "index.html",context)
 
 def about(request):
-    return render (request, "about.html")
+    about=AboutContent.objects.all()[0]
+    aboutName=about.aboutName
+    aboutUs=about.aboutUs
+    aboutDescription=about.aboutDescription
+
+    context={
+        "aboutName": aboutName,
+        "aboutUs": aboutUs,
+        "aboutDescription":aboutDescription
+    }
+    return render (request, "about.html",context)
