@@ -387,16 +387,17 @@
                         </div>
                     </div>
                 </div>-->
+          
 
-          {% for card in blogCard %}
+          {% for card in blogCard%}
           <div class="col-sm-6 col-lg-4 col-xl-4">
             <div class="single-home-blog">
               <div class="card">
                 <img src="media/{{card.blogImg}}" class="card-img-top" width="400" height="250" alt="blog" />
                 <div class="card-body">
                   <a href="{{card.blogHref}}">Technology</a> | <span> {{card.blogDate}}</span>
-                  <a href="hpvc.html">
-                    <h5 class="card-title">{{card.Heading}}</h5>
+                  <a href="{{card.blogHref}}">
+                    <h5 class="card-title">{{card.blogHeading}}</h5>
                   </a>
                 </div>
               </div>
