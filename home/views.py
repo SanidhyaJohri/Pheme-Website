@@ -8,9 +8,13 @@ def index(request):
     welcomeHeader=welcome.welcomeHeader
     welcomeParagraph=welcome.welcomeParagraph
 
+    blogCard = BlogCard.objects.all()
+    
+
     context={
         "welcomeHeader": welcomeHeader,
         "welcomeParagraph": welcomeParagraph,
+        "blogCard" : blogCard
     }
 
     return render (request, "index.html",context)
@@ -27,3 +31,4 @@ def about(request):
         "aboutDescription":aboutDescription
     }
     return render (request, "about.html",context)
+
