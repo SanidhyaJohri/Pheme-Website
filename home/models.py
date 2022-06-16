@@ -1,6 +1,6 @@
 from distutils.command.upload import upload
 from django.db import models
-
+import datetime
 # Create your models here.
 class WelcomeMessage(models.Model):
     welcomeHeader=models.CharField(max_length=1000)
@@ -46,3 +46,9 @@ class Extras(models.Model):
     extraParagraph = models.CharField(max_length=1000)
     extraHref = models.CharField(max_length=1000)
     extraHrefTitle = models.CharField(max_length=100)
+
+class Event(models.Model):
+    eventName=models.CharField(max_length=100)
+    eventImg=models.ImageField(upload_to="events",blank=True)
+    eventDesc=models.CharField(max_length=10000)
+    eventDate=models.DateField(default=datetime.date.today)

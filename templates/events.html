@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="static/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="static/css/style.css">
-
+    <!-- RoadMap CSS -->
+    <link rel="stylesheet" href="static/css/roadmap.css">
     <style>
     .nav-link:hover {
   text-decoration: underline;
@@ -81,7 +82,7 @@
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
                                 <li class="nav-item active">
-                                	<a class="nav-link" href="http://iitj.ac.in">IITJ</a>
+                                    <a class="nav-link" href="http://iitj.ac.in">IITJ</a>
                                 </li>
                             </ul>
                         </div>
@@ -91,5 +92,88 @@
         </div>
     </header>
     <!-- Header part end-->
+
+    <!--RoadMap start-->
+    <h2>A timeline of all events covered under Pheme</h2>
+    <div class="timeline">
+        {% load my_tags%}
+        {% for event in events %}
+        {% if forloop.counter|modulo:3 == 1 %}
+            <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+                <div class="timeline__event__icon ">
+                    <!-- <i class="lni-cake"></i> -->
+                    <img src="media/{{event.eventImg}}">
+                </div>
+                <div class="timeline__event__date">
+                {{event.eventDate}}
+                </div>
+                <div class="timeline__event__content ">
+                <div class="timeline__event__title">
+                    {{event.eventName}}
+                </div>
+                <div class="timeline__event__description">
+                    <p>{{event.eventDesc}}</p>
+                </div>
+                </div>
+            </div>   
+        {% elif forloop.counter|modulo:3 == 2%}      
+            <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+                <div class="timeline__event__icon">
+                    <i class="lni-burger"></i>
+
+                </div>
+                <div class="timeline__event__date">
+                    {{event.eventDate}}
+                </div>
+                <div class="timeline__event__content">
+                <div class="timeline__event__title">
+                    {{event.eventName}}
+                </div>
+                <div class="timeline__event__description">
+                    <p>{{event.eventDesc}}</p>
+                </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+                <div class="timeline__event__icon">
+                <i class="lni-slim"></i>
+
+                </div>
+                <div class="timeline__event__date">
+                    {{event.eventDate}}
+                </div>
+                <div class="timeline__event__content">
+                <div class="timeline__event__title">
+                    {{event.eventName}}
+                </div>
+                <div class="timeline__event__description">
+                    <p>{{event.eventDesc}}</p>
+                </div>
+
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        <!-- <div class="timeline__event animated fadeInUp timeline__event--type1">
+            <div class="timeline__event__icon">
+            <i class="lni-cake"></i>
+
+            </div>
+            <div class="timeline__event__date">
+            20-08-2019
+            </div>
+            <div class="timeline__event__content">
+            <div class="timeline__event__title">
+                Birthday
+            </div>
+            <div class="timeline__event__description">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+            </div>
+            </div>
+        </div> -->
+
+    </div>
+    <!--RoadMap End-->
 </body>
 </html>

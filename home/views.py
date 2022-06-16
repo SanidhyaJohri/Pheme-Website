@@ -72,3 +72,11 @@ def Extra(request):
 
 def project(request):
     return render(request, "project_details.html")
+
+def events(request):
+    event=Event.objects.all()
+
+    context={
+        "events": event,
+    }
+    return render(request, "events.html", context)
