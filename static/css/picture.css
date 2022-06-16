@@ -1,0 +1,15 @@
+.picture{
+    display: block;
+    margin: 0 auto;
+    margin: 25px;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    overflow: hidden;
+}
+.picture img{
+    margin: -25px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg) scale(1.00);
+}

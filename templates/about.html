@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="static/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="static/css/style.css">
-
+    <!-- style POR Holder image -->
+    <link rel="stylesheet" href="static/css/picture.css">
     <style>
     .nav-link:hover {
   text-decoration: underline;
@@ -269,7 +270,9 @@
                     <div class="slider-nav-thumbnails">
                         {% for lead in leader %}
                         <div class="slider-thumbnails">
-                            <img src="media/{{lead.leaderImg}}" alt="slideimg" class="image">
+                            <div class="picture">
+                                <img src="media/{{lead.leaderImg}}" alt="slideimg" class="image">
+                            </div>
                         </div>
                         {% endfor %}
                         {% comment %} <div class="slider-thumbnails">
