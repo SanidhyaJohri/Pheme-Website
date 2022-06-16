@@ -69,3 +69,6 @@ def Extra(request):
         "extras": extras
     }
     return render(request, "Extra.html", context)
+
+def project(request):
+    return render(request, "project_details.html")
