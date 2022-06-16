@@ -40,3 +40,9 @@ class Academic(models.Model):
     acadsHead=models.CharField(max_length=100)
     acadsDesc=models.CharField(max_length=1000)
 
+class Extras(models.Model):
+    extraHeader = models.CharField(max_length=100)
+    extraImg = models.ImageField(upload_to = "extras", blank = True)
+    extraParagraph = models.CharField(max_length=1000)
+    extraHref = models.CharField(max_length=1000)
+    extraHrefTitle = models.CharField(max_length=100)

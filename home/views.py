@@ -63,5 +63,9 @@ def Acads(request):
     return render(request, "Acads.html", context)
 
 def Extra(request):
-    context={}
+    extras = Extras.objects.all()
+
+    context={
+        "extras": extras
+    }
     return render(request, "Extra.html", context)
