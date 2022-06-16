@@ -16,7 +16,7 @@ class BlogCard(models.Model):
     blogDate = models.DateTimeField(auto_now_add = True)
     blogHref = models.CharField(max_length=100)
     blogHeading = models.CharField(max_length=100)
-
+ 
 
 class Leader(models.Model):
     leaderImg=models.ImageField(upload_to = "pics", blank = True)
@@ -34,4 +34,9 @@ class contactDetails(models.Model):
     contactPosition = models.CharField(max_length=100)
     contactPhone = models.CharField(max_length=100)
     contactEmail = models.CharField(max_length=100)
+
+class Academic(models.Model):
+    acadsImg=models.ImageField(upload_to = "acads", blank = True)
+    acadsHead=models.CharField(max_length=100)
+    acadsDesc=models.CharField(max_length=1000)
 

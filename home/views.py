@@ -46,3 +46,22 @@ def contact(request):
         "contactdetails":contactdetails
     }
     return render (request, "contact.html",context)
+
+def Acads(request):
+    acads=Academic.objects.all()[0]
+    acadsHead=acads.acadsHead
+    acadsDesc=acads.acadsDesc
+    acadsImg=acads.acadsImg
+
+
+    context={
+        "acadsHead":acadsHead,
+        "acadsDesc":acadsDesc,
+        "acadsImg":acadsImg
+
+    }
+    return render(request, "Acads.html", context)
+
+def Extra(request):
+    context={}
+    return render(request, "Extra.html", context)
