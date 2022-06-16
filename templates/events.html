@@ -48,7 +48,7 @@
             <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
                 <div class="timeline__event__icon ">
                     <!-- <i class="lni-cake"></i> -->
-                    <img src="media/{{event.eventImg}}">
+                    <a href="{{event.eventHref}}"><p>Know More</p></a>
                 </div>
                 <div class="timeline__event__date">
                 {{event.eventDate}}
@@ -65,7 +65,9 @@
         {% elif forloop.counter|modulo:3 == 2%}      
             <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
                 <div class="timeline__event__icon">
-                    <i class="lni-burger"></i>
+                    <!-- <i class="lni-burger"></i> -->
+                    <a href="{{event.eventHref}}"><p>Know More</p></a>
+
 
                 </div>
                 <div class="timeline__event__date">
@@ -83,7 +85,7 @@
             {% else %}
             <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
                 <div class="timeline__event__icon">
-                <i class="lni-slim"></i>
+                    <a href="{{event.eventHref}}"><p>Know More</p></a>
 
                 </div>
                 <div class="timeline__event__date">
