@@ -10,4 +10,5 @@ admin.site.register(Leader)
 admin.site.register(Academic)
 admin.site.register(Extras)
 admin.site.register(Event)
+admin.site.register(Blog)
 

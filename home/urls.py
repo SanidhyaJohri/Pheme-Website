@@ -11,6 +11,9 @@ urlpatterns = [
     path('Extra', views.Extra, name='Extra'),
     path('project_details', views.project, name='project_details'),
     path('eventsBlog', views.eventsBlog, name='eventsBlog'),
+    path('temp',views.temp, name='temp'),
+    path('blog',views.BlogList.as_view(),name='blog'),
     path('event',views.EventList.as_view(),name='events'),
     path('<slug:slug>',views.EventDetail.as_view(),name='event_detail'),
+    path('<slug:slugBlog>',views.BlogDetail.as_view(),name='blog_detail'),
 ]

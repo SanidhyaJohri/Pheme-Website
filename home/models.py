@@ -59,3 +59,17 @@ class Event(models.Model):
 
     def __str__(self):
         return self.eventName
+
+class Blog(models.Model):
+    blogTitle=models.CharField(max_length=200, unique=True)
+    blogAuthor=models.CharField(max_length=200)
+    blogContent=models.TextField(default=None)
+    blogImg=models.ImageField(upload_to="blogs",blank=True)
+    blogCreatedOn=models.DateField(default=datetime.date.today)
+    blogSlug = models.SlugField(max_length=200, unique=True,default=None)
+    blogGenre=models.CharField(default=None, max_length=100)
+    class Meta:
+        ordering = ['-blogCreatedOn']
+    
+    def __str__(self):
+        return self.blogTitle

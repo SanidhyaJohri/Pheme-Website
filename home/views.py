@@ -9,13 +9,13 @@ def index(request):
     welcomeHeader=welcome.welcomeHeader
     welcomeParagraph=welcome.welcomeParagraph
 
-    blogCard = BlogCard.objects.all()
+    blogCard = Blog.objects.all()
     
 
     context={
         "welcomeHeader": welcomeHeader,
         "welcomeParagraph": welcomeParagraph,
-        "blogCard" : blogCard
+        "blog_list" : blogCard
     }
 
     return render (request, "index.html",context)
@@ -92,3 +92,14 @@ class EventList(generic.ListView):
 class EventDetail(generic.DetailView):
     model=Event
     template_name="eventBlog.html"
+
+class BlogList(generic.ListView):
+    queryset=Blog.objects.all().order_by('-blogCreatedOn')
+    template_name='blog.html'
+
+class BlogDetail(generic.DetailView):
+    model=Blog
+    template_name="blogDetail.html"
+
+def temp(request):
+    return render(request,"blog.html")

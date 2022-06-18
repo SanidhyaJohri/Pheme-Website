@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pheme - The IIT Jodhpur Newsletter</title>
+    <link rel="icon" href="static/img/lg.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="static/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="static/css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="static/css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="static/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <style>
+    .nav-link:hover {
+  text-decoration: underline;
+    }
+    .column {
+    float: left;
+    width: 33.33%;
+    margin-bottom: 10%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    }
+    .card-body{
+        padding: 25px 10px 29px 40px;
+        background-color: #fff;
+        position: absolute;
+        left: 20px;
+        bottom: -140px;
+        box-shadow: -7.552px 9.326px 20px 0px rgba(1, 84, 85, 0.1);
+        border-radius: 10px;
+        width: 330px;
+    }
+
+    </style>
+</head>
+
+<body>
+    {% extends 'navbar.html' %}
+    {% block content %}
+    <section class="blog_part section_padding">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-6">
+              <div class="section_tittle text-center">
+                <h2>Blog !!</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!--  <div class="col-sm-6 col-lg-4 col-xl-4 d-none d-sm-block d-lg-none">
+                      <div class="single-home-blog">
+                          <div class="card">
+                              <img src="img/blog/blog_3.png" class="card-img-top" alt="blog">
+                              <div class="card-body">
+                                  <a href="blog.html">Technology</a> | <span> March 30, 2019</span>
+                                  <a href="blog.html">
+                                      <h5 class="card-title">Be there bring void give good from stars</h5>
+                                  </a>
+                                  <ul>
+                                      <li> <span class="ti-comments"></span>2 Comments</li>
+                                      <li> <span class="ti-heart"></span>0 Like</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>-->
+  
+            <!-- <div class="col-sm-6 col-lg-4 col-xl-4">
+              <div class="single-home-blog">
+                <div class="card">
+                  <img src="media/{{card.blogImg}}" class="card-img-top" width="400" height="250" alt="blog" />
+                  <div class="card-body">
+                    <a href="{{card.blogHref}}">Technology</a> | <span> {{card.blogDate}}</span>
+                    <a href="{{card.blogHref}}">
+                      <h5 class="card-title">{{card.blogHeading}}</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            {% for blog in blog_list %}
+            <div class="column col-sm-6 col-lg-4 col-xl-4">
+              <div class="single-home-blog">
+                <div class="card">
+                  <img src="media/{{blog.blogImg}}" class="card-img-top" width="400" height="250" alt="blog" />
+                  <div class="card-body">
+                    <p style="text-align:center;">{{blog.blogAuthor}} | {{blog.blogCreatedOn}}</p>
+                    <br>
+                    <a href="#">
+                      <h5 class="card-title" style="text-align:center;">{{blog.blogTitle}}</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="column col-sm-6 col-lg-4 col-xl-4">
+              <div class="single-home-blog">
+                <div class="card">
+                  <img src="static/img/hpvc.jpg" class="card-img-top" width="400" height="250" alt="blog" />
+                  <div class="card-body">
+                    <a href="hpvc.html">Technology</a> | <span> March 30, 2019</span>
+                    <a href="hpvc.html">
+                      <h5 class="card-title">HUMAN POWERED VEHICLE CHALLENGE</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column col-sm-6 col-lg-4 col-xl-4">
+              <div class="single-home-blog">
+                <div class="card">
+                  <img src="static/img/tata.jpg" class="card-img-top" width="400" height="250" alt="blog" />
+                  <div class="card-body">
+                    <a href="tata.html">Technology</a> | <span> March 30, 2019</span>
+                    <a href="tata.html">
+                      <h5 class="card-title">TATA CRUCIBLE HACKATHON</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+        </div>
+    </section>
+    
+    <div class="hero-app-7 custom-animation"><img src="static/img/animate_icon/icon_1.png" alt=""></div>
+    <div class="hero-app-8 custom-animation2"><img src="static/img/animate_icon/icon_2.png" alt=""></div>
+    <div class="hero-app-6 custom-animation3"><img src="static/img/animate_icon/icon_3.png" alt=""></div>
+
+    <!-- about part start-->
+    {% comment %} <section class="about_part single_padding_top">
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-md-6 col-lg-6 col-xl-5">
+                    <div class="about_img">
+                        <img src="static/img/gallery/Sports2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 offset-xl-1 col-xl-6">
+                    <div class="about_text">
+                        <h2>SPORTS</h2>
+                        <p>Sports are known for producing the most remarkable athletes, colourful characters, influential leaders and memorable heroes. Student Sports and Games Society reflects the same spirit of introducing sporting activities to the campus community.We at IITJ believe in bringing out and encouraging the sports person in each one of you under the guidance of professional coaches and with best sporting facility. </p>
+                        <a href="https://students.iitj.ac.in/society/sports-and-games/" class="btn_2">SPORTS AND GAMES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-md-6 col-lg-6 col-xl-5">
+                    <div class="about_img">
+                        <img src="static/img/cult.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 offset-xl-1 col-xl-6">
+                    <div class="about_text">
+                        <h2>CULTURALS AND ARTS</h2>
+                        <p>Our aim is to help students pursue their interest.We here believe that the cultural activities  help students​ to improve their skills such as organization, presentation, leadership and interpersonal communication. </p>
+                        <a href="https://students.iitj.ac.in/society/cultural-and-literary/" class="btn_2">CULTURALS</a>  <a href="https://students.iitj.ac.in/society/design-and-art/" class="btn_2">ARTS</a>
+                        <p>We, the engineers, are supposed to be innovative in order to provide solutions to the problems challenging every system and we believe that creativity is a very important ingredient in the recipe for innovation. Anybody can plan weird; that is easy. What’s hard is to be simple. Making the simple, awesomely simple this is creativity. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-md-6 col-lg-6 col-xl-5">
+                    <div class="about_img">
+                        <img src="static/img/tech.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 offset-xl-1 col-xl-6">
+                    <div class="about_text">
+                        <h2>TECHNICALS</h2>
+                        <p>Humanity currently lives in a competitive economy, and technology is just the latest and greatest tool for outcompeting. Using technology to provide solutions to our daily problems is the basic aim of technology but it's hard to explain the limits it has. It is just as infinite as anybody's imagination can be.We help students not only to amplify their skills and learn new ones but we also teach them some basic skills required to survive in today's competitive world like leadership, team work, self confidence, presentational skills and many more. We help ingenious mind to innovate and create some wonders that are considered mystical by many. </p>
+                        <a href="https://students.iitj.ac.in/society/science-and-technology/" class="btn_2">TECHNICALS</a>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        {% comment %} <div class="hero-app-7 custom-animation"><img src="static/img/animate_icon/icon_1.png" alt=""></div>
+        <div class="hero-app-8 custom-animation2"><img src="static/img/animate_icon/icon_2.png" alt=""></div>
+        <div class="hero-app-6 custom-animation3"><img src="static/img/animate_icon/icon_3.png" alt=""></div>
+    </section> {% endcomment %}
+    <!-- about part start-->
+
+    <!--::review_part start::-->
+ <!--    <section class="review_part">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5">
+                    <div class="section_tittle text-center">
+                        <h2>Customer Are Saying</h2>
+                        <p>Winged hath had face creepeth abundantly so shall </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-5">
+  -->                   <!-- THUMBNAILS -->
+ <!--                    <div class="slider-nav-thumbnails">
+                        <div class="slider-thumbnails">
+                            <img src="img/client/client_1.png" alt="slideimg" class="image">
+                        </div>
+                        <div class="slider-thumbnails">
+                            <img src="img/client/client_2.png" alt="slideimg" class="image" >
+                        </div>
+                        <div class="slider-thumbnails">
+                            <img src="img/client/client_1.png" alt="slideimg" class="image">
+                        </div>
+                        <div class="slider-thumbnails">
+                            <img src="img/client/client_1.png" alt="slideimg" class="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+  -->                   <!-- MAIN SLIDES -->
+ <!--                    <div class="slider">
+                        <div data-index="1">
+                            <div class="client_review_text text-center">
+                                <img src="img/icon/quate.svg" class="quate_icon" alt="quate">
+                                <p>Own midst. Behold sea created male he together of That Said fourth deep abundantly
+                                    have light night beginning rule darkness seed darkness which land saying moveth.
+                                    Fifth shall wont signs, can seasons green days gathered great</p>
+                                <h3>Daniel E Gilcritst</h3>
+                                <h5>Manager, Vision</h5>
+                            </div>
+                        </div>
+                        <div data-index="2">
+                            <div class="client_review_text text-center">
+                                <img src="img/icon/quate.svg" class="quate_icon" alt="quate">
+                                <p>Own midst. Behold sea created male he together of That Said fourth deep abundantly
+                                    have light night beginning rule darkness seed darkness which land saying moveth.
+                                    Fifth shall wont signs, can seasons green days gathered great</p>
+                                <h3>Daniel E Gilcritst</h3>
+                                <h5>Manager, Vision</h5>
+                            </div>
+                        </div>
+                        <div data-index="3">
+                            <div class="client_review_text text-center">
+                                <img src="img/icon/quate.svg" class="quate_icon" alt="quate">
+                                <p>Own midst. Behold sea created male he together of That Said fourth deep abundantly
+                                    have light night beginning rule darkness seed darkness which land saying moveth.
+                                    Fifth shall wont signs, can seasons green days gathered great</p>
+                                <h3>Daniel E Gilcritst</h3>
+                                <h5>Manager, Vision</h5>
+                            </div>
+                        </div>
+                        <div data-index="4">
+                            <div class="client_review_text text-center">
+                                <img src="img/icon/quate.svg" class="quate_icon" alt="quate">
+                                <p>Own midst. Behold sea created male he together of That Said fourth deep abundantly
+                                    have light night beginning rule darkness seed darkness which land saying moveth.
+                                    Fifth shall wont signs, can seasons green days gathered great</p>
+                                <h3>Daniel E Gilcritst</h3>
+                                <h5>Manager, Vision</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-app-7 custom-animation4"><img src="img/animate_icon/icon_4.png" alt=""></div>
+            <div class="hero-app-3 custom-animation2"><img src="img/animate_icon/icon_8.png" alt=""></div>
+            <div class="hero-app-8 custom-animation"><img src="img/animate_icon/icon_3.png" alt=""></div>
+        </div>
+    </section> -->
+    <!--::blog_part end::-->
+
+    <!-- our_service_part part start-->
+   <!--  <section class="about_part our_service_part single_padding_top">
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-md-6 col-xl-5">
+                    <div class="about_img">
+                        <img src="img/about_img_2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 offset-xl-1 col-xl-6">
+                    <div class="about_text">
+                        <h2>We Providing high quality
+                            consultency service</h2>
+                        <h4>First Abundantly night you are sea great fifth year</h4>
+                        <p>Lights fly above bearing brought abundantly whose. Without one may i seed void wels great
+                            face god were deep be first. Unto for third be in moveth. Bring land bearing un abundantly
+                            firmament appear whales them years. Lights fly above bearing brought bold abundantly whose
+                            without one may i seed. </p>
+                        <a href="#" class="btn_2">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-app-1 custom-animation"><img src="img/animate_icon/icon_1.png" alt=""></div>
+        <div class="hero-app-4 custom-animation2"><img src="img/animate_icon/icon_8.png" alt=""></div>
+        <div class="hero-app-8 custom-animation3"><img src="img/animate_icon/icon_9.png" alt=""></div>
+    </section> -->
+    <!--::blog_part start::-->
+<!--section class="review_part padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>Current Responsibility Holders</h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-5">
+                    <!-- THUMBNAILS -->
+                    <!--div class="slider-nav-thumbnails">
+                        <div class="slider-thumbnails">
+                            <img src="img/client/sachin_pandey.png" alt="slideimg" class="image">
+                        </div>
+                        <div class="slider-thumbnails">
+                            <img src="img/client/shivang_khandelwal.png" alt="slideimg" class="image">
+                        </div>
+                        <div class="slider-thumbnails">
+                            <img src="img/client/sanjay_reddy.png" alt="slideimg" class="image">
+                        </div>
+       				    <div class="slider-thumbnails">
+                            <img src="img/client/preet_shah.png" alt="slideimg" class="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <!-- MAIN SLIDES -->
+                    <!--div class="slider">
+                        <div data-index="1">
+                            <div class="client_review_text text-center">
+                                 <!--    <ul>
+                                        <li style="display:inline-block;">
+                                            <a href="mailto:pandey.6@iitj.ac.in">
+                                                                    <img src="img/contact.png" class="quate_icon" alt="quate">
+                                                                </a>
+                                        </li>
+                                        <li style="display:inline-block;">
+                                            <a href="https://api.whatsapp.com/send?phone=919557588318"> <img src="img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                        </li>
+                                    </ul> -->
+                                <!--h3>Sachin Pandey</h3>
+                                <h5>Mentor</h5>
+                                <p align="center">
+                                	Pheme, which means Goddess Of Fame, updates you about campus and helps you stay connected with it from Anywhere and Everywhere.
+                                	 </br>
+                                	 "Vocal And Authentic"
+                                </p>
+                            </div>
+                        </div>
+                        <div data-index="2">
+                            <div class="client_review_text text-center">
+                            	<!--  <ul>
+                                        <li style="display:inline-block;">
+                                            <a href="mailto:khandelwal.2@iitj.ac.in">
+                                                                    <img src="img/contact.png" class="quate_icon" alt="quate">
+                                                                </a>
+                                        </li>
+                                        <li style="display:inline-block;">
+                                            <a href="https://api.whatsapp.com/send?phone=919893055868"> <img src="img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                        </li>
+                                    </ul>
+ -->
+                                <!--h3>Shivang Khandelwal</h3>
+                                <h5>Captain</h5>
+                                <p align="center">
+									Pheme is a club which let you know about the events happening in college or some trending issue . It's a platform to where you can speak about problems faced by you in the Institute. You can always come over and become a part of it.                               
+                               </p>
+                            </div>
+                        </div>
+                        <div data-index="3">
+                            <div class="client_review_text text-center">
+                              <!--  <ul>
+                                    <li style="display:inline-block;">
+                                        <a href="mailto:reddy.6@iitj.ac.in">
+                                                                <img src="img/contact.png" class="quate_icon" alt="quate">
+                                                            </a>
+                                    </li>
+                                    <li style="display:inline-block;">
+                                        <a href="https://api.whatsapp.com/send?phone=918985689004"> <img src="img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                    </li>
+                                </ul>
+     -->
+                                <!--h3>Bandi Sanjay Reddy</h3>
+                                <h5>Vice Captain</h5>
+                                <p align="center">
+								A frame to our legacies</br>
+An everlasting record of our memories </br>
+It is more than just news....It is a book of our lives here at IITJ...
+                               
+                               </p>
+                            </div>
+                        </div>
+                        <div data-index="4">
+                            <div class="client_review_text text-center">
+                         <!--  <ul>
+                                        <li style="display:inline-block;">
+                                            <a href="mailto:shah.4@iitj.ac.in">
+                                                                    <img src="img/contact.png" class="quate_icon" alt="quate">
+                                                                </a>
+                                        </li>
+                                        <li style="display:inline-block;">
+                                            <a href="https://api.whatsapp.com/send?phone=919428583360"> <img src="img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                        </li>
+                                    </ul>
+ -->                                <!--h3>Preet Shah</h3>
+                                <h5>Vice Captain</h5>
+                              <p align="center">
+                                <!-- 	+91-94285-83360
+                                </br>
+                                	 <a href="mailto:shah.4@iitj.ac.in">
+                                	 	shah.4@iitj.ac.in
+                                	 </a> -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-app-7 custom-animation4"><img src="static/img/animate_icon/icon_4.png" alt=""></div>
+            <div class="hero-app-3 custom-animation2"><img src="static/img/animate_icon/icon_8.png" alt=""></div>
+            <div class="hero-app-8 custom-animation"><img src="static/img/animate_icon/icon_3.png" alt=""></div>
+        </div>
+    </section>
+</br>
+</br>
+</br>
+    <!-- footer part start-->
+<!--     <section class="footer-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>Top Products</h4>
+                    <ul>
+                        <li><a href="#">Managed Website</a></li>
+                        <li><a href="#">Manage Reputation</a></li>
+                        <li><a href="#">Power Tools</a></li>
+                        <li><a href="#">Marketing Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Brand Assets</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Brand Assets</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Experts</a></li>
+                        <li><a href="#">Agencies</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-4 col-sm-8 col-md-8 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>Newsletter</h4>
+                    <p>You can trust us. we only send promo offers,</p>
+                    <div class="form-wrap" id="mc_embed_signup">
+                        <form target="_blank"
+                            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                            method="get" class="form-inline">
+                            <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                required="" type="email">
+                            <button class="click-btn btn btn-default text-uppercase btn_2">subscribe</button>
+                            <div style="position: absolute; left: -5000px;">
+                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                            </div>
+
+                            <div class="info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/slick.min.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+
+    {% endblock content %}
+
+</body>
+
+</html>

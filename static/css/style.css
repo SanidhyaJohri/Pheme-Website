@@ -3891,6 +3891,7 @@ ul {
   bottom: -140px;
   box-shadow: -7.552px 9.326px 20px 0px rgba(1, 84, 85, 0.1);
   border-radius: 10px;
+  width: 330px;
 }
 
 @media (max-width: 576px) {
