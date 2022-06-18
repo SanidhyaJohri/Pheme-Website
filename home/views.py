@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import response, HttpResponse
 from .models import *
+from django.views import generic
 # Create your views here.
 def index(request):
 
@@ -80,3 +81,14 @@ def events(request):
         "events": event,
     }
     return render(request, "events.html", context)
+
+def eventsBlog(request):
+    return render(request,"eventBlog.html")
+
+class EventList(generic.ListView):
+    queryset=Event.objects.all().order_by('eventDate')
+    template_name='events.html'
+
+class EventDetail(generic.DetailView):
+    model=Event
+    template_name="eventBlog.html"

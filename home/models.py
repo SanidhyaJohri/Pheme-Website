@@ -52,3 +52,10 @@ class Event(models.Model):
     eventImg=models.ImageField(upload_to="events",blank=True)
     eventDesc=models.CharField(max_length=10000)
     eventDate=models.DateField(default=datetime.date.today)
+    slug = models.SlugField(max_length=200, unique=True, default=None)
+
+    class Meta:
+        ordering = ['-eventDate']
+
+    def __str__(self):
+        return self.eventName
