@@ -228,22 +228,24 @@
                         {% for lead in leader %}
                         <div data-index={{forloop.counter}}>
                             <div class="client_review_text text-center">
-                                 <!--    <ul>
-                                        <li style="display:inline-block;">
-                                            <a href="mailto:pandey.6@iitj.ac.in">
-                                                                    <img src="img/contact.png" class="quate_icon" alt="quate">
-                                                                </a>
-                                        </li>
-                                        <li style="display:inline-block;">
-                                            <a href="https://api.whatsapp.com/send?phone=919557588318"> <img src="img/whatsapp.png" class="quate_icon" alt="quate"></a>
-                                        </li>
-                                    </ul> -->
+                                <ul>
+                                    <li style="display:inline-block;">
+                                        <a href="mailto:pandey.6@iitj.ac.in">
+                                                                <img src="static/img/contact.png" class="quate_icon" alt="quate">
+                                                            </a>
+                                    </li>
+                                    <li style="display:inline-block;">
+                                        <a href="https://api.whatsapp.com/send?phone=919557588318"> <img src="static/img/whatsapp.png" class="quate_icon" alt="quate"></a>
+                                    </li>
+                                </ul>
+                                <br>
                                 <h3>{{lead.leaderName}}</h3>
                                 <h5>{{lead.leaderPosition}}</h5>
                                 <p align="center">
                                 	{{lead.leaderDesc}}
                                 </p>
                             </div>
+                                    
                         </div>
                         {% endfor %}
                         {% comment %} <div data-index="1">
