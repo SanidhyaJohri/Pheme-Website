@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.http import response, HttpResponse
+from django.http import Http404, response, HttpResponse
 from .models import *
 from django.views import generic
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def index(request):
 
@@ -101,5 +102,15 @@ class BlogDetail(generic.DetailView):
     model=Blog
     template_name="blogDetail.html"
 
-def temp(request):
-    return render(request,"blog.html")
+@csrf_exempt
+def blogDetail(request):
+    if(request.method=="POST"):
+        slug=request.POST.get('blogSlugId')
+        print(slug)
+        blog=Blog.objects.filter(blogSlug=slug)[0]
+        
+        context={
+            "object":blog
+        }
+        return render(request,"blogDetail.html",context)
+
