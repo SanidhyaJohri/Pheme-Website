@@ -414,20 +414,26 @@
           </div>
           {% endfor %} -->
           {% for blog in blog_list %}
-          <div class="column col-sm-6 col-lg-4 col-xl-4">
+            <div class="column col-sm-6 col-lg-4 col-xl-4">
             <div class="single-home-blog">
-              <div class="card">
+                <div class="card">
                 <img src="media/{{blog.blogImg}}" class="card-img-top" width="400" height="250" alt="blog" />
-                <div class="card-body">
-                  <p style="text-align:center;">{{blog.blogGenre}} | {{blog.blogCreatedOn}}</p>
-                  <br>
-                  <a href="#">
-                    <h5 class="card-title" style="text-align:center;">{{blog.blogTitle}}</h5>
-                  </a>
+                <form method="post" action="/blogDetail">
+
+                    <div class="card-body">
+                        <p style="text-align:center;">{{blog.blogAuthor}} | {{blog.blogCreatedOn}}</p>
+                        <br>
+                            <input type="hidden" value="{{blog.blogSlug}}" id="blogSlugId" name="blogSlugId">
+                            <button class="btn" type="submit" href="/blogDetail"><a href="/blogDetail">
+                                <h5 class="card-title" style="text-align:center;">{{blog.blogTitle}}</h5>
+                                </a>
+                            </button>
+                    </div>
+                </form>
+
                 </div>
-              </div>
             </div>
-          </div>
+            </div>
           {% endfor %}
           <!-- <div class="col-sm-6 col-lg-4 col-xl-4">
             <div class="single-home-blog">

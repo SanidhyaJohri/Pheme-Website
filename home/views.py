@@ -10,16 +10,15 @@ def index(request):
     welcomeHeader=welcome.welcomeHeader
     welcomeParagraph=welcome.welcomeParagraph
 
-    blogCard = Blog.objects.all()
-    
+    blogCard = list(Blog.objects.all())[:3]
 
     context={
         "welcomeHeader": welcomeHeader,
         "welcomeParagraph": welcomeParagraph,
         "blog_list" : blogCard
     }
-
-    return render (request, "index.html",context)
+    
+    return render (request, "index.html", context)
 
 def about(request):
     about=AboutContent.objects.all()[0]
