@@ -1,1 +1,1 @@
-web: gunicorn pheme.wsgi --log-file -
+web: gunicorn pheme.wsgi
