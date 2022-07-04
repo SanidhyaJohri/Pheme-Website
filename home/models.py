@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from distutils.command.upload import upload
 from django.db import models
 import datetime
@@ -53,7 +54,15 @@ class Event(models.Model):
     eventDesc=models.CharField(max_length=10000)
     eventDate=models.DateField(default=datetime.date.today)
     slug = models.SlugField(max_length=200, unique=True, default=None)
-
+    entry1name=models.CharField(max_length=100, default=NULL)
+    entry1img=models.ImageField(upload_to="events", blank=True)
+    entry1href=models.CharField(max_length=100, default=NULL)
+    entry2name=models.CharField(max_length=100, default=NULL)
+    entry2img=models.ImageField(upload_to="events", blank=True)
+    entry2href=models.CharField(max_length=100, default=NULL)
+    entry3name=models.CharField(max_length=100, default=NULL)
+    entry3img=models.ImageField(upload_to="events", blank=True)
+    entry3href=models.CharField(max_length=100, default=NULL)
     class Meta:
         ordering = ['-eventDate']
 
